@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\brons\AppData\Local\JetBrains\Rider2021.2\resharper-host\temp\Rider\vAny\CoverageData\_CodeTogether_August.1697769388\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=754b2406_002De81d_002D45da_002Da64c_002De52f83b6f3e8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="GetLocations_WithValidJArray_ReturnsListOfLocations" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::CE641A72-E75F-4214-B260-FC8DB2AE20C0::net5.0-windows7.0::WeatherApp.Tests.Services.JsonParsingServiceTests.GetLocations_WithValidJArray_ReturnsListOfLocations&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CE641A72-E75F-4214-B260-FC8DB2AE20C0::net5.0-windows7.0::WeatherApp.Tests.Services.JsonParsingServiceTests.GetLocations_WithInvalidJArray_ReturnsListOfLocations&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CE641A72-E75F-4214-B260-FC8DB2AE20C0::net5.0-windows7.0::WeatherApp.Tests.Services.JsonParsingServiceTests.GetLocations_WithNullJArray_ReturnsEmptyLocationList&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CE641A72-E75F-4214-B260-FC8DB2AE20C0::net5.0-windows7.0::WeatherApp.Tests.Services.JsonParsingServiceTests.GetWeather_WithValidJsonObject_ReturnsConsolidatedWeather&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::CE641A72-E75F-4214-B260-FC8DB2AE20C0::net5.0-windows7.0::WeatherApp.Tests.Services.JsonParsingServiceTests.GetWeather_WithNullJsonObject_ReturnsEmptyConsolidatedWeather&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

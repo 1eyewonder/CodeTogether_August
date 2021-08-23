@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Style 
+        x:Key="PopupBoxButton" 
+        TargetType="{x:Type Button}"
+        BasedOn="{StaticResource MaterialDesignFloatingActionMiniButton}">
+
+        <Setter Property="Background" Value="{DynamicResource MaterialDesignDarkBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDarkForeground}"/>
+        <Setter Property="Margin" Value="0 15"/>
+
+    </Style>
+
+</ResourceDictionary>
