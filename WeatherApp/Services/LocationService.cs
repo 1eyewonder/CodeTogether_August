@@ -6,22 +6,23 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WeatherApp.Dtos;
+using WeatherApp.Helpers;
 using WeatherApp.Services.Interfaces;
 
 namespace WeatherApp.Services
 {
     public class LocationService : ILocationService
     {
-        private readonly HttpClient _httpClient;
         private readonly IJsonParsingService _jsonParsingService;
         private readonly ILogger<LocationService> _logger;
+        private readonly HttpClient _httpClient;
 
         public LocationService(ILogger<LocationService> logger, 
-            HttpClient httpClient,
+            IHttpClientFactory httpClientFactory,
             IJsonParsingService jsonParsingService)
         {
             _logger = logger;
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient(StaticStrings.WeatherApi);
             _jsonParsingService = jsonParsingService;
         }
 

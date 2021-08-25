@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using WeatherApp.Dtos;
 using WeatherApp.Exceptions;
+using WeatherApp.Helpers;
 using WeatherApp.Services.Interfaces;
 
 namespace WeatherApp.Services
@@ -16,11 +17,12 @@ namespace WeatherApp.Services
         private readonly IJsonParsingService _jsonParsingService;
         private readonly ILogger<WeatherService> _logger;
 
-        public WeatherService(ILogger<WeatherService> logger, HttpClient httpClient,
+        public WeatherService(ILogger<WeatherService> logger, 
+            IHttpClientFactory httpClientFactory,
             IJsonParsingService jsonParsingService)
         {
             _logger = logger;
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.CreateClient(StaticStrings.WeatherApi);
             _jsonParsingService = jsonParsingService;
         }
 

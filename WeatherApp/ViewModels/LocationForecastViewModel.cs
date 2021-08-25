@@ -51,6 +51,7 @@ namespace WeatherApp.ViewModels
 
         private async Task RemoveLocationFromWeatherPanel()
         {
+            await Task.Delay(0);
             _weatherForecastPanelViewModel.RemoveLocation(Location);
         }
     }

@@ -11,6 +11,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="materialDesign:TextFieldAssist.TextFieldCornerRadius" Value="5"/>
         <Setter Property="materialDesign:HintAssist.HelperTextFontSize" Value="24"/>
+        <Setter Property="Foreground" Value="{DynamicResource MaterialDesignDarkForeground}"></Setter>
     </Style> 
     
     <Style

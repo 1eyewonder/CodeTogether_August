@@ -64,7 +64,7 @@ namespace WeatherApp
             services.AddScoped<ILocationForecastViewModel, LocationForecastViewModel>();
 
             // Material design
-            services.AddSingleton(new SnackbarMessageQueue(TimeSpan.FromSeconds(5)));
+            services.AddSingleton(new SnackbarMessageQueue(TimeSpan.FromSeconds(3)));
 
             services.AddTransient(typeof(MainWindow));
         }
@@ -76,12 +76,7 @@ namespace WeatherApp
         /// <remarks>Useful for configuring multiple APIs</remarks>
         private void ConfigureHttp(IServiceCollection services)
         {
-            services.AddHttpClient<ILocationService, LocationService>(x =>
-            {
-                x.BaseAddress = new Uri(Configuration.GetSetting<string>(nameof(AppSettings.WeatherApiUrl)));
-            });
-            
-            services.AddHttpClient<IWeatherService, WeatherService>(x =>
+            services.AddHttpClient(StaticStrings.WeatherApi, x =>
             {
                 x.BaseAddress = new Uri(Configuration.GetSetting<string>(nameof(AppSettings.WeatherApiUrl)));
             });

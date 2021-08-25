@@ -57,7 +57,8 @@
 
             <TextBlock Grid.Row="2" 
                        Style="{StaticResource LocationForecastTextBlock}"
-                       FontSize="28">
+                       FontSize="28"
+                       Margin="20">
                 <Run Text="Located In:" />
                 <Run Text="{Binding ParentLocation.Name}" />
             </TextBlock>
