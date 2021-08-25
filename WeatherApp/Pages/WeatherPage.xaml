@@ -1,0 +1,34 @@
+﻿<Page x:Class="WeatherApp.Pages.WeatherPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:viewModels="clr-namespace:WeatherApp.ViewModels.Interfaces"
+      xmlns:controls="clr-namespace:WeatherApp.Controls"
+      mc:Ignorable="d"
+      Title="WeatherPage">
+    
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Hidden">
+        <ItemsControl
+            ItemsSource="{Binding Weathers}"
+            Grid.IsSharedSizeScope="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch">
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate
+                    DataType="{x:Type viewModels:ILocationForecastViewModel}">
+                    <controls:LocationForecast/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
+    </ScrollViewer>
+    
+</Page>

@@ -13,13 +13,21 @@ namespace WeatherApp.Converters
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var services = (IServiceProvider)App.Current.Resources["Services"];
+            var services = (IServiceProvider)Application.Current.Resources["Services"];
 
+            if (value == null) return null;
             switch ((EApplicationPage)value)
             {
                 case EApplicationPage.LoginPage:
                     return new LoginPage(services.GetService<ILoginViewModel>());
 
+                case EApplicationPage.LocationPage:
+                    return new LocationsPage(services.GetService<ILocationFinderViewModel>(),
+                        services.GetService<IWeatherForecastPanelViewModel>());
+
+                case EApplicationPage.WeatherPage:
+                    return new WeatherPage(services.GetService<IWeatherForecastPanelViewModel>());
+                
                 default:
                     Debugger.Break();
                     return null;

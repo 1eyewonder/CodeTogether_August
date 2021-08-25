@@ -11,6 +11,6 @@ namespace WeatherApp.ViewModels.Interfaces
         float Latitude { get; set; }
         float Longitude { get; set; }
         ObservableCollection<Location> Locations { get; set; }
-        ICommand FindLocationsCommand();
+        ICommand FindLocationsCommand { get; }
     }
 }

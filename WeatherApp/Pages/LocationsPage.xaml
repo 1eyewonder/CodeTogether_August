@@ -1,0 +1,69 @@
+﻿<Page x:Class="WeatherApp.Pages.LocationsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:WeatherApp.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      Title="LocationsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Style="{StaticResource MyMaterialTextBox}"
+                 Grid.Row="0" Grid.Column="0"
+                 materialDesign:HintAssist.Hint="Search"
+                 Text="{Binding Path=SearchText, Mode=TwoWay}"
+                 FontSize="18"
+                 Margin="0 20"/>
+        
+        <Button Style="{StaticResource PopupBoxButton}"
+                Content="{materialDesign:PackIcon Kind=Search, Size=20}"
+                Command="{Binding FindLocationsCommand}"
+                ToolTip="Search"
+                Grid.Row="0" Grid.Column="1"
+                HorizontalAlignment="Left"
+                Margin="10 0"/>
+        
+        <DataGrid ItemsSource="{Binding Path=Locations}" 
+                  AutoGenerateColumns="false"
+                  RowDetailsVisibilityMode="Visible"
+                  CanUserAddRows="False" 
+                  Grid.Row="1" Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  HorizontalAlignment="Stretch" 
+                  HorizontalContentAlignment="Stretch" 
+                  SelectionUnit="FullRow"
+                  ColumnWidth="*"
+                  FontSize="18">
+            
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate> 
+                        <DataTemplate> 
+                            <Button Style="{StaticResource PopupBoxButton}"
+                                    Content="{materialDesign:PackIcon Kind=Plus, Size=20}"
+                                    Click="AddLocation"
+                                    ToolTip="Add"/>
+                        </DataTemplate> 
+                    </DataGridTemplateColumn.CellTemplate> 
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Type" Binding="{Binding Type}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Latitude" Binding="{Binding Latitude}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Longitude" Binding="{Binding Longitude}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Distance" Binding="{Binding Distance}" IsReadOnly="true"/>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+    </Grid>
+</Page>

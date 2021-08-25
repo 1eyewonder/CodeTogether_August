@@ -28,6 +28,7 @@ namespace WeatherApp.ViewModels
         public async void Execute(object parameter)
         {
             if (CanExecute(parameter))
+            {
                 try
                 {
                     _isExecuting = true;
@@ -38,9 +39,11 @@ namespace WeatherApp.ViewModels
                     Console.WriteLine(e);
                     _isExecuting = false;
                     throw;
-                }
+                } 
+            }
 
             if (_handler is not null) RaiseCanExecuteChanged();
+            _isExecuting = false;
         }
 
         public event EventHandler CanExecuteChanged;

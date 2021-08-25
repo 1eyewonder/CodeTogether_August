@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Windows;
+using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WeatherApp.Helpers;
@@ -51,11 +52,19 @@ namespace WeatherApp
             services.AddScoped<ILocationService, LocationService>();
             services.AddScoped<IWeatherService, WeatherService>();
             services.AddScoped<IJsonParsingService, JsonParsingService>();
-            
+
             // View models
             services.AddSingleton<IApplicationViewModel, ApplicationViewModel>();
-            services.AddScoped<ILoginViewModel, LoginViewModel>();
-            services.AddScoped<IWeatherForecastPanelViewModel, WeatherForecastPanelViewModel>();
+            services.AddSingleton<ILoginViewModel, LoginViewModel>();
+            services.AddSingleton<ISnackbarService, SnackbarService>();
+            services.AddSingleton<IWeatherForecastPanelViewModel, WeatherForecastPanelViewModel>();
+            
+            services.AddScoped<ILocationFinderViewModel, LocationFinderViewModel>();
+            services.AddScoped<IDailyForecastViewModel, DailyForecastViewModel>();
+            services.AddScoped<ILocationForecastViewModel, LocationForecastViewModel>();
+
+            // Material design
+            services.AddSingleton(new SnackbarMessageQueue(TimeSpan.FromSeconds(5)));
 
             services.AddTransient(typeof(MainWindow));
         }

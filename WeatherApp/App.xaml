@@ -25,6 +25,8 @@
                 
                 <!--My Styles-->
                 <ResourceDictionary Source="Styling/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="Styling/FieldsDictionary.xaml"/>
+                <ResourceDictionary Source="Styling/DataGridDictionary.xaml"/>
                 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
